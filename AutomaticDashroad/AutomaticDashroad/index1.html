@@ -1,0 +1,196 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>KEEMUT</title>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <!--<link href="dependancy/static_css_main.7d82196a.css" rel="stylesheet">-->
+</head>
+<body>
+    <div id="root">
+        <div data-reactroot="" class="App material-design fixed-sidebar fixed-header skin-5 content-appear custom-grey-color">
+            <div>
+                <div class="site-header custom-color navigation-bar">
+                    <nav class="navbar navbar-dark navigation-bar">
+                        <div class="navbar navigation-bar flex-center-align-items nav-bar-text">
+                            <div><span class="KEEMUT">KEEMUT</span></div><nav class="navigation-button">
+                                <a class="nav-button">
+                                    <span id="navigation-button-text-home" class="navigation-button-text">Home</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <div class="site-content site-content-no-top-padding">
+                        <div class="content-area py-1 first-sub-report row-no-padding">
+                            <div class="container-fluid">
+                                <div id="row-container" class="row row-md">
+                                    <div class="col-md-4">
+                                        <div id="car-name-card" class="box box-block bg-white center-aligned " style="height: 197px;">
+                                            <div class="clearfix mb-1 first-sub-report-card-header">
+                                                <h5 class="float-xs-left first-sub-report-card-header-text center-aligned"><!-- react-text: 29 -->Lexus ES 350 2016 <!-- /react-text --><br><!-- react-text: 31 --> <!-- /react-text --><br><!-- react-text: 33 --> 77,000KM<!-- /react-text --></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div id="condition-card" class="box box-block bg-white center-aligned " style="height: 197px;">
+                                            <div class="clearfix mb-1 first-sub-report-card-header">
+                                                <h5 class="float-xs-left first-sub-report-card-header-text center-aligned"><!-- react-text: 38 -->THIS CAR IS IN GOOD CONDITION <!-- /react-text --><br><!-- react-text: 40 --> <!-- /react-text --><br><!-- react-text: 42 --> 164,000AED<!-- /react-text --></h5>
+                                            </div>
+                                        </div>
+                                    </div><div class="col-md-4"><div id="certified-card" class="box box-block bg-white center-aligned " style="height: 197px;"><div class="clearfix mb-1 first-sub-report-card-header"><img src="dependancy/keemut-certified.ae47b844.jpg" class="keemut-certified"></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="section-header-container">
+                        <nav class="navbar section-header flex-center-align-items">
+                            <div class="flex-center-align-items"><img src="data:image/png;base64,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" class="report-headerbar-icon-size"><span class="report-sub-header-title">Vehicle Basics</span></div>
+                        </nav>
+                    </div><div class="site-content site-content-no-top-padding">
+                        <div class="content-area py-1 row-no-padding">
+                            <div class="container-fluid">
+                                <div class="row row-md" id="row-container">
+                                    <div class="col-md-4"><div id="basic-info-card" class="box box-block bg-white" style="height: 292px;"><div class="clearfix mb-1"><h5 class="float-xs-left">BASIC INFO</h5></div><table class="table mb-md-0"><tbody><tr><td>MAKE</td><td><span class="text-muted">Lexus</span></td></tr><tr><td>MODEL</td><td><span class="text-muted">ES 350</span></td></tr><tr><td>YEAR</td><td><span class="text-muted">2016</span></td></tr><tr><td>BODY TYPE</td><td><span class="text-muted">Sedan</span></td></tr><tr><td>FUEL TYPE</td><td><span class="text-muted">Gasoline</span></td></tr><tr><td>POWERTRAIN</td><td><span class="text-muted">Front wheel drive</span></td></tr></tbody></table></div></div><div class="col-md-4">
+                                        <div id="vin-info-card" class="box box-block bg-white" style="height: 292px;">
+                                            <div class="clearfix mb-1"><h5 class="float-xs-left">VIN INFO</h5></div><table class="table mb-md-0">
+                                                <tbody>
+                                                    <tr><td>VIN ID</td><td><span class="text-muted">JTHBK1GG9G2219733</span></td></tr>
+                                                    <tr><td>ESTIMATED BUILD</td><td><span class="text-muted">Jan 2016</span></td></tr>
+                                                    <tr><td>PRODUCTION NUMBER</td><td><span class="text-muted">219733</span></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div><div class="col-md-4">
+                                        <div id="production-info-card" class="box box-block bg-white" style="height: 292px;">
+                                            <div class="clearfix mb-1"><h5 class="float-xs-left">PRODUCTION INFO</h5></div><table class="table mb-md-0">
+                                                <tbody>
+                                                    <tr><td>NUMBER OF RECALLS</td><td><span class="text-muted">1</span></td></tr>
+                                                    <tr><td>ESTIMATED PRODUCTION</td><td><span class="text-muted">301,055</span></td></tr>
+                                                    <tr><td>SALES DEMAND</td><td><span class="text-muted">+3% Year-to-Date</span></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div>
+                    <div class="section-header-container">
+                        <nav class="navbar section-header flex-center-align-items">
+                            <div class="navbar-right flex-center-align-items">
+                                <img src="data:image/png;base64,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" class="report-headerbar-icon-size">
+                                <span class="report-sub-header-title">Vehicle Analytics</span>
+                            </div>
+                        </nav>
+                    </div><div class="site-content site-content-no-top-padding">
+                        <div class="content-area py-1 row-no-padding">
+                            <div class="container-fluid">
+                                <div class="row row-md">
+                                    <div class="col-md-4"><div id="vehicle-score-card" class="box box-block bg-white" style="height: 427px;"><h5 class="mb-2">VEHICLE SCORE</h5><div class="row center-aligned "><div class="center-aligned-canvas"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div></div><table class="table mb-md-0 chart-explanation"><tbody><tr><td>80-100</td><td><span class="text-muted">This car is in great condition</span></td></tr><tr><td>60-79</td><td><span class="text-muted">This car has had some issues</span></td></tr><tr><td>40-59</td><td><span class="text-muted">This car should be priced at the average</span></td></tr><tr><td>Below 40</td><td><span class="text-muted">You will need to check the driving history in more detail</span></td></tr></tbody></table></div></div><div class="col-md-4">
+                                        <div id="heavy-driving-card" class="box box-block bg-white" style="height: 427px;">
+                                            <h5 class="mb-2">% HEAVY DRIVING</h5><div class="row center-aligned">
+                                                <div class="center-aligned-canvas"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div>
+                                            </div><div class="chart-explanation">Heavy driving means driving that puts more load on your engine. If the vehicle is driven at high speeds where the engine is above its optimum RPM then this adds to the engine’s wear and tear.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4"><div id="average-fuel-economy-card" class="box box-block bg-white" style="height: 427px;"><h5 class="mb-2">AVERAGE FUEL ECONOMY</h5><div class="row center-aligned"><div class="center-aligned-canvas"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div></div><div class="chart-explanation">The average MPG for vehicle in the same price range is 21 MPG.</div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="site-content site-content-no-top-padding">
+                        <div class="content-area py-1 row-no-padding">
+                            <div class="container-fluid">
+                                <div class="row row-md">
+                                    <div class="col-md-4"><div id="city-vs-highway-card" class="box box-block bg-white" style="height: 259px;"><h5 class="mb-2">CITY VS HIGHWAY DRIVING</h5><div class="row center-aligned"><div class=""><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div></div><div class="chart-explanation">TODO: put in an explanation here</div></div></div><div class="col-md-4">
+                                        <div id="driving-style-card" class="box box-block bg-white" style="height: 259px;">
+                                            <h5 class="mb-2">DRIVING STYLE</h5><table class="table mb-md-0 chart-explanation">
+                                                <tbody>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>Total Count</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>HARSH BRAKING</td>
+                                                        <td>
+                                                            <span class="text-muted">403 (1.5/km)</span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr><td>HARSH ACCELERATION</td><td><span class="text-muted">495 (0.75/km)</span></td></tr>
+                                                    <tr><td>OVER SPEEDING HOURS</td><td><span class="text-muted">100 (0.2/km)</span></td></tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div><div class="col-md-4">
+                                        <div id="fuel-economy-card" class="box box-block bg-white" style="height: 259px;">
+                                            <iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><h5 class="mb-2">FUEL ECONOMY</h5><canvas height="161" width="322" style="display: block; width: 322px; height: 161px;"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div>
+                    <div class="section-header-container">
+                        <nav class="navbar section-header flex-center-align-items">
+                            <div class="flex-center-align-items">
+                                <img src="data:image/png;base64,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" class="report-headerbar-icon-size">
+                                <span class="report-sub-header-title">Engine Diagnostics</span>
+                            </div>
+                        </nav>
+                    </div><div class="site-content site-content-no-top-padding"><div class="content-area py-1 row-no-padding"><div class="container-fluid"><div class="row row-md"><div class="col-md-4"><div id="coolant-temperature-card" class="box box-block bg-white"><h5 class="mb-2">COOLANT TEMPERATURE</h5><div class="row center-aligned"><div class="center-aligned-canvas"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div></div><div class="chart-explanation">The average coolant temperature for vehicle in the same price range is 60 Celcius.</div></div></div><div class="col-md-4"><div id="check-engine-light-card" class="box box-block bg-white"><h5 class="mb-2">CHECK ENGINE LIGHT</h5><div class="row center-aligned"><div class="center-aligned-canvas"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div></div><div class="chart-explanation">Check engine light of vehicle in the same price range went on 17 times on average.</div></div></div><div class="col-md-4"><div id="off-road-card" class="box box-block bg-white"><h5 class="mb-2">OFF ROAD DRIVING</h5><div class="row center-aligned"><div class="center-aligned-canvas"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas></div></div><div class="chart-explanation">Vehicle in the same price range went off road 10 times on average.</div></div></div></div></div></div></div><div class="site-content site-content-no-top-padding"><div class="content-area py-1 row-no-padding"><div class="container-fluid"><div class="row row-md"><div class="col-md-4"><div class="box box-block bg-white"><h5 class="mb-2">RPM RANGE</h5><div class="row"><div class="gauge-chart"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><canvas height="175" width="351" style="display: block; width: 351px; height: 175px;"></canvas></div></div><div class="chart-explanation">Engines have a range of ‘good’ RPM that is usually below 3500 RPMs. This car falls into a good range 93.6% of its life.</div></div></div></div></div></div></div>
+                </div><div>
+                    <div class="section-header-container">
+                        <nav class="navbar section-header flex-center-align-items">
+                            <div class="flex-center-align-items"><img src="data:image/png;base64,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" class="report-headerbar-icon-size"><span class="report-sub-header-title">Price Analytics</span></div>
+                        </nav>
+                    </div>
+                    <div class="site-content site-content-no-top-padding">
+                        <div class="content-area py-1 row-no-padding">
+                            <div class="container-fluid">
+                                <div class="row row-md ">
+                                    <div class="col-md-12">
+                                        <div class="box box-block bg-white">
+                                            <iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><h5 class="mb-2">PRICE RANGE</h5><canvas height="536" width="1072" style="display: block; width: 1072px; height: 536px;"></canvas><div class="chart-explanation"><!-- react-text: 263 -->The fair market value of this car is 164,000 AED. <!-- /react-text --><br><!-- react-text: 265 --> The Lexus ES-350 is a favorite car among consumers around the world. It holds its value quite well. This vehicle has good engine and is mostly driven during rush hour traffic in city driving.<!-- /react-text --></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div>
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row text-xs-center flex-center-align-items">
+                                <div class="col-sm-4 text-sm-left mb-0-5 mb-sm-0 no-margin">2016 © KEEMUT</div><div class="col-sm-8 text-sm-right">
+                                    <ul class="nav nav-inline l-h-2 flex-center-align-items flex-direction-end">
+                                        <li class="nav-item"><a class="nav-link text-black">Privacy</a></li>
+                                        <li class="nav-item"><a class="nav-link text-black">Terms</a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-black">Help</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<script type="text/javascript" src="dependancy/static_js_main.b618f53e.js"></script>-->
+</body>
+</html>

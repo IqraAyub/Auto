@@ -1,0 +1,11 @@
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\AutomaticDashroad.dll.config
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\AutomaticDashroad.dll
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\AutomaticDashroad.pdb
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\MaterialDesignColors.dll
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\MaterialDesignThemes.Wpf.dll
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\MaterialDesignColors.pdb
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\MaterialDesignThemes.Wpf.pdb
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\bin\MaterialDesignThemes.Wpf.xml
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\obj\Debug\AutomaticDashroad.dll
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\obj\Debug\AutomaticDashroad.pdb
+C:\Users\spfarmadmin\Documents\Visual Studio 2013\Projects\AutomaticDashroad\AutomaticDashroad\obj\Debug\AutomaticDashroad.csprojResolveAssemblyReference.cache

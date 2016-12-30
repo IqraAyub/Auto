@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>jquery.svgDoughnutChart.js</id>
+    <version>0.1</version>
+    <title>jquery.svgDoughnutChart.js</title>
+    <authors>Jordi Corbilla</authors>
+    <owners>Jordi Corbilla</owners>
+    <licenseUrl>https://github.com/JordiCorbilla/jquery.svgDoughnutChart.js/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/JordiCorbilla/jquery.svgDoughnutChart.js</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A Simple SVG doughnut chart</description>
+    <summary>A Simple SVG doughnut chart</summary>
+    <releaseNotes>Version 0.1 (Beta).
+Basic implementation.</releaseNotes>
+    <copyright>Jordi Corbilla</copyright>
+    <language>en-GB</language>
+    <tags>svg chart doughnut jquery</tags>
+    <dependencies>
+      <dependency id="jQuery" version="2.2.1" />
+    </dependencies>
+  </metadata>
+</package>
