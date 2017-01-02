@@ -50,6 +50,7 @@
 </head>
 
 <body ng-controller="myCtrl">
+
     <header>
         <!--Navbar-->
         <nav class="navbar navbar-dark primary-color">
@@ -81,9 +82,9 @@
                         </li>-->
                     </ul>
                     <!--Search form-->
-                    <form class="form-inline">
+                    <!--<form class="form-inline">
                         <input class="form-control" type="text" placeholder="Search">
-                    </form>
+                    </form>-->
                 </div>
                 <!--/.Collapse content-->
 
@@ -99,12 +100,12 @@
 
             <!--Page heading-->
             <!--<div class="row">
-                <div class="col-md-12">
-                    <h1 class="h1-responsive">
-                        Automatic Dashroad
-                    </h1>
-                </div>
-            </div>-->
+            <div class="col-md-12">
+                <h1 class="h1-responsive">
+                    Automatic Dashroad
+                </h1>
+            </div>
+        </div>-->
             <!--/.Page heading-->
             <hr>
 
@@ -157,8 +158,8 @@
             <div class="col-md-12">
                 <nav class="navbar primary-color" style="color:white"><h1 class="h1-responsive">Vehicle Basics</h1> </nav>
                 <!--<h1 class="h1-responsive">
-            Vehicle Basics
-        </h1>-->
+                Vehicle Basics
+            </h1>-->
             </div>
             <hr>
             <!--Second row-->
@@ -167,18 +168,18 @@
                 <div class="col-lg-4">
                     <!--Card-->
                     <div class="card">
-                        
+
                         <div id="basic-info-card" class="box box-block bg-white" style="height: 300px;">
                             <div class="clearfix mb-1">
                                 <h5 class="float-xs-left">BASIC INFO</h5>
                             </div><table class="table mb-md-0">
                                 <tbody>
-                                    <tr><td>MAKE</td><td><span class="text-muted">{{veh.make}}</span></td></tr>
-                                    <tr><td>MODEL</td><td><span class="text-muted">{{veh.model}}</span></td></tr>
-                                    <tr><td>YEAR</td><td><span class="text-muted">{{veh.year}}</span></td></tr>
-                                    <tr><td>BODY TYPE</td><td><span class="text-muted">{{veh.bodyType}}</span></td></tr>
-                                    <tr><td>FUEL TYPE</td><td><span class="text-muted">{{veh.fuelType}}</span></td></tr>
-                                    <tr><td>POWERTRAIN</td><td><span class="text-muted">{{veh.powerTrain}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">MAKE</td><td><span class="text-muted">{{veh.make}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">MODEL</td><td><span class="text-muted">{{veh.model}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">YEAR</td><td><span class="text-muted">{{veh.year}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">BODY TYPE</td><td><span class="text-muted">{{veh.bodyType}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">FUEL TYPE</td><td><span class="text-muted">{{veh.fuelType}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">POWERTRAIN</td><td><span class="text-muted">{{veh.powerTrain}}</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -195,9 +196,9 @@
                         <div id="vin-info-card" class="box box-block bg-white" style="height: 300px;">
                             <div class="clearfix mb-1"><h5 class="float-xs-left">VIN INFO</h5></div><table class="table mb-md-0">
                                 <tbody>
-                                    <tr><td>VIN ID</td><td>{{veh.vinId}}</td></tr>
-                                    <tr><td>ESTIMATED BUILD</td><td><span class="text-muted">Jan 2016</span></td></tr>
-                                    <tr><td>PRODUCTION NUMBER</td><td><span class="text-muted">219733</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">VIN ID</td><td>{{veh.vinId}}</td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">ESTIMATED BUILD</td><td><span class="text-muted">Jan 2016</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">PRODUCTION NUMBER</td><td><span class="text-muted">219733</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -217,9 +218,9 @@
                                 <h5 class="float-xs-left">PRODUCTION INFO</h5>
                             </div><table class="table mb-md-0">
                                 <tbody>
-                                    <tr><td>NUMBER OF RECALLS</td><td><span class="text-muted">1</span></td></tr>
-                                    <tr><td>ESTIMATED PRODUCTION</td><td><span class="text-muted">301,055</span></td></tr>
-                                    <tr><td>SALES DEMAND</td><td><span class="text-muted">+3% Year-to-Date</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">NUMBER OF RECALLS</td><td><span class="text-muted">1</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">ESTIMATED PRODUCTION</td><td><span class="text-muted">301,055</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">SALES DEMAND</td><td><span class="text-muted">+3% Year-to-Date</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -234,8 +235,8 @@
             <div class="col-md-12">
                 <nav class="navbar primary-color" style="color:white"> <h1 class="h1-responsive">Vehicle Analytics</h1></nav>
                 <!--<h1 class="h1-responsive">
-                    Vehicle Analytics
-                </h1>-->
+                Vehicle Analytics
+            </h1>-->
             </div>
             <hr>
             <!--Third row-->
@@ -254,10 +255,10 @@
                             </div>
                             <table class="table mb-md-0 chart-explanation">
                                 <tbody>
-                                    <tr><td>80-100</td><td> <span class="text-muted">This car is in great condition</span></td></tr>
-                                    <tr><td>60-79</td><td><span class="text-muted">This car has had some issues</span></td></tr>
-                                    <tr><td>40-59</td><td><span class="text-muted">This car should be priced at the average</span></td></tr>
-                                    <tr><td>Below 40</td><td><span class="text-muted">You will need to check the driving history in more detail</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">80-100</td><td> <span class="text-muted" style="font-size:12px; font-family:sans-serif">This car is in great condition</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">60-79</td><td><span class="text-muted" style="font-size:12px; font-family:sans-serif">This car has had some issues</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">40-59</td><td><span class="text-muted" style="font-size:12px; font-family:sans-serif">This car should be priced at the average</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">Below 40</td><td><span class="text-muted" style="font-size:12px; font-family:sans-serif">You will need to check the driving history in more detail</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -277,9 +278,9 @@
                                     <iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
                                     <canvas id="driving" height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
                                     <!--<canvas id="doughnut" class="chart chart-doughnut"
-                                            chart-data="data" chart-labels="labels"></canvas>--> 
+                                        chart-data="data" chart-labels="labels"></canvas>-->
                                 </div>
-                            </div><div class="chart-explanation">Heavy driving means driving that puts more load on your engine. If the vehicle is driven at high speeds where the engine is above its optimum RPM then this adds to the engine’s wear and tear.</div>
+                            </div><div class="chart-explanation" style="font-size:12px; font-family:sans-serif">Heavy driving means driving that puts more load on your engine. If the vehicle is driven at high speeds where the engine is above its optimum RPM then this adds to the engine’s wear and tear.</div>
                         </div>
 
                     </div>
@@ -320,9 +321,9 @@
                             <h5 class="mb-2">DRIVING STYLE</h5><table class="table mb-md-0 chart-explanation">
                                 <tbody>
                                     <tr><td></td><td>Total Count</td></tr>
-                                    <tr><td>HARSH BRAKING</td><td><span class="text-muted">403 (1.5/km)</span></td></tr>
-                                    <tr><td>HARSH ACCELERATION</td><td><span class="text-muted">495 (0.75/km)</span></td></tr>
-                                    <tr><td>OVER SPEEDING HOURS</td><td><span class="text-muted">100 (0.2/km)</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">HARSH BRAKING</td><td><span class="text-muted">403 (1.5/km)</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">HARSH ACCELERATION</td><td><span class="text-muted">495 (0.75/km)</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">OVER SPEEDING HOURS</td><td><span class="text-muted">100 (0.2/km)</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -340,10 +341,10 @@
                             <div class="row center-aligned">
                                 <div class="center-aligned-canvas">
                                     <iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-                                    <canvas height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
+                                    <canvas id="economy" height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
                                 </div>
                             </div>
-                            <div class="chart-explanation">The average MPG for vehicle in the same price range is 21 MPG.</div>
+                            <div class="chart-explanation" style="font-size:12px; font-family:sans-serif">The average MPG for vehicle in the same price range is 21 MPG.</div>
                         </div>
                     </div>
                 </div>
@@ -366,16 +367,111 @@
             </div>
             <!--Fourth row-->
             <hr>
+            <div class="col-md-12">
+                <nav class="navbar primary-color" style="color:white"> <h1 class="h1-responsive">Engine Diagnostics</h1></nav>
+            </div>
+            <hr>
+            <!--Fifth row-->
+            <div class="row">
+                <!--First column-->
+                <div class="col-lg-4">
+                    <!--Card-->
+                    <div class="card">
+
+                        <div id="coolant-temperature-card" class="box box-block bg-white" style="height: 260px;">
+                            <h5 class="mb-2">COOLANT TEMPERATURE</h5>
+                            <div class="row center-aligned">
+                                <div class="center-aligned-canvas">
+                                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block none; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                    <canvas id="coolnutTemp"height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-explanation" style="font-size:12px; font-family:sans-serif">The average coolant temperature for vehicle in the same price range is 60 Celcius.</div>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/.First column-->
+                <!--Second column-->
+                <div class="col-lg-4">
+                    <!--Card-->
+                    <div class="card">
+
+                        <div id="check-engine-light-card" class="box box-block bg-white" style="height: 260px;">
+                            <h5 class="mb-2">CHECK ENGINE LIGHT</h5><div class="row center-aligned">
+                                <div class="center-aligned-canvas">
+                                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                    <canvas id="checkEngLight" height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
+                                </div>
+                            </div>
+                            <div class="chart-explanation" style="font-size:12px; font-family:sans-serif">Check engine light of vehicle in the same price range went on 17 times on average.</div>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+
+                <!--Second column-->
+                <!--Third column-->
+                <div class="col-lg-4">
+                    <!--Card-->
+                    <div class="card">
+
+                        <div id="off-road-card" class="box box-block bg-white" style="height: 260px;">
+                            <h5 class="mb-2">OFF ROAD DRIVING</h5><div class="row center-aligned">
+                                <div class="center-aligned-canvas">
+                                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                    <canvas id="offRoadDrive" height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
+                                </div>
+                            </div><div class="chart-explanation" style="font-size:12px; font-family:sans-serif">Vehicle in the same price range went off road 10 times on average.</div>
+                        </div>
+                    </div>
+
+                    <!--/.Card-->
+                </div>
+                <!--/.Third column-->
+            </div>
+            <!--/.Fifth row-->
+            <hr>
+            <!--Sixth row-->
+            <div class="row">
+                <!--First column-->
+                <div class="col-lg-4">
+                    <!--Card-->
+                    <div class="card">
+
+                        <div class="box box-block bg-white" style="height: 260px;">
+                            <h5 class="mb-2">RPM RANGE</h5><div class="row">
+                                <div class="gauge-chart">
+                                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                    <canvas height="175" width="351" style="display: block; width: 351px; height: 175px;"></canvas>
+                                </div>
+                            </div><div class="chart-explanation" style="font-size:12px; font-family:sans-serif">Engines have a range of ‘good’ RPM that is usually below 3500 RPMs. This car falls into a good range 93.6% of its life.</div>
+                        </div>
+
+                    </div>
+                    <!--/.Card-->
+                </div>
+                <!--/.First column-->
+            </div>
+            <!--/.Sixth row-->
+            <hr>
+
         </div>
+
+
         <!--/.Main layout-->
     </main>
+
+
 
     <!--Footer-->
     <footer class="page-footer center-on-small-only primary-color">
         <!--Footer links-->
         <div class="container-fluid">
             <div class="row text-xs-center flex-center-align-items">
-                <div class="col-sm-4 text-sm-left mb-0-5 mb-sm-0 no-margin">2016 © Automatic</div><div class="col-sm-8 text-sm-right">
+                <div class="col-sm-4 text-sm-left mb-0-5 mb-sm-0 no-margin">2016 © Xelleration</div><div class="col-sm-8 text-sm-right">
                     <ul class="nav nav-inline l-h-2 flex-center-align-items flex-direction-end">
                         <li class="nav-item"><a class="nav-link text-black">Privacy</a></li>
                         <li class="nav-item"><a class="nav-link text-black">Terms</a></li>
@@ -400,5 +496,9 @@
     <!--<script src="js/mdb.min.js"></script>-->
 
 </body>
+
+
+
+
 
 </html>

@@ -16,6 +16,7 @@
     var ctx = document.getElementById("scroe");
     var myChart = new Chart(ctx, {
         type: 'doughnut',
+        title: 'text title',
         data: {
             labels: [
                 "Best Condition",
@@ -38,6 +39,15 @@
             elements: {
                 arc: {
                     borderColor: "#FFFAF0"
+                },
+                center: {
+                    maxText: '100%',
+                    text: "great",
+                    fontColor: '#FF6684',
+                    fontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+                    fontStyle: 'normal',
+                    minFontSize: 1,
+                    maxFontSize: 256,
                 }
             }
         }
@@ -89,11 +99,11 @@
                 {
                     data: [100, 50],
                     backgroundColor: [
-                        "#FF6384",
+                        "#DC143C",
                         "#36A2EB"
                     ],
                     hoverBackgroundColor: [
-                        "#FF6384",
+                        "#DC143C",
                         "#36A2EB"
                     ]
                 }]
@@ -106,4 +116,127 @@
             }
         }
     });
+
+    //Average Fuel Economy
+    var ctx = document.getElementById("economy");
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                "Best Condition",
+                "White"
+            ],
+            datasets: [
+                {
+                    data: [75, 25],
+                    backgroundColor: [
+                        "#90EE90",
+                        "#FFFAF0"
+                    ],
+                    hoverBackgroundColor: [
+                        "#90EE90",
+                        "#FFFAF0"
+                    ]
+                }]
+        },
+        options: {
+            elements: {
+                arc: {
+                    borderColor: "#FFFAF0"
+                }
+            }
+        }
+    });
+
+    //Coolnut Temprature
+    var ctx = document.getElementById("coolnutTemp");
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                //"Green",
+                //"White"
+            ],
+            datasets: [
+                {
+                    data: [25, 75],
+                    backgroundColor: [
+                        "#90EE90",
+                         "#FFFAF0"
+                    ],
+                    hoverBackgroundColor: [
+                        "#90EE90",
+                         "#FFFAF0"
+                    ]
+                }]
+        },
+        options: {
+            elements: {
+                arc: {
+                    borderColor: "#FFFAF0"
+                }
+            }
+        }
+    });
+    //Check Engine Light
+    var ctx = document.getElementById("checkEngLight");
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                //"Green",
+                //"White"
+            ],
+            datasets: [
+                {
+                    data: [50, 75],
+                    backgroundColor: [
+                        "#90EE90",
+                         "#FFFAF0"
+                    ],
+                    hoverBackgroundColor: [
+                        "#90EE90",
+                         "#FFFAF0"
+                    ]
+                }]
+        },
+        options: {
+            elements: {
+                arc: {
+                    borderColor: "#FFFAF0"
+                }
+            }
+        }
+    });
+    //Off Road Driving
+    var ctx = document.getElementById("offRoadDrive");
+    var myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: [
+                //"Green",
+                //"White"
+            ],
+            datasets: [
+                {
+                    data: [50, 120],
+                    backgroundColor: [
+                        "#90EE90",
+                         "#FFFAF0"
+                    ],
+                    hoverBackgroundColor: [
+                        "#90EE90",
+                         "#FFFAF0"
+                    ]
+                }]
+        },
+        options: {
+            elements: {
+                arc: {
+                    borderColor: "#FFFAF0"
+                }
+            }
+        }
+    });
+    
 }]);
