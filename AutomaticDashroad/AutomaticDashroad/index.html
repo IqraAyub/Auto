@@ -8,8 +8,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Material Design Bootstrap</title>
-
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+    <!--<script src="Scripts/angular-route.min.js"></script>-->
     <script src="Scripts/angular-animate.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
@@ -117,7 +118,7 @@
                     <div class="card">
                         <div id="car-name-card" class="box box-block bg-white center-aligned " style="height: 197px;">
                             <div class="clearfix mb-1 first-sub-report-card-header">
-                                <h5 class="float-xs-left first-sub-report-card-header-text center-aligned font-italic"><!-- react-text: 29 -->Lexus ES 350 2016 <!-- /react-text --><br><!-- react-text: 31 --> <!-- /react-text --><br><!-- react-text: 33 --> 77,000KM<!-- /react-text --></h5>
+                                <h5 class="float-xs-left first-sub-report-card-header-text center-aligned font-italic"><!-- react-text: 29 -->{{veh.make}} {{veh.model}} {{veh.year}} <!-- /react-text --><br><!-- react-text: 31 --> <!-- /react-text --><br><!-- react-text: 33 --> 77,000KM<!-- /react-text --></h5>
                             </div>
                         </div>
                     </div>
@@ -198,7 +199,7 @@
                                 <tbody>
                                     <tr><td style="font-size:12px; font-family:sans-serif">VIN ID</td><td>{{veh.vinId}}</td></tr>
                                     <tr><td style="font-size:12px; font-family:sans-serif">ESTIMATED BUILD</td><td><span class="text-muted">Jan 2016</span></td></tr>
-                                    <tr><td style="font-size:12px; font-family:sans-serif">PRODUCTION NUMBER</td><td><span class="text-muted">219733</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">PRODUCTION NUMBER</td><td><span class="text-muted">{{veh.prodNum}}</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -321,9 +322,9 @@
                             <h5 class="mb-2">DRIVING STYLE</h5><table class="table mb-md-0 chart-explanation">
                                 <tbody>
                                     <tr><td></td><td>Total Count</td></tr>
-                                    <tr><td style="font-size:12px; font-family:sans-serif">HARSH BRAKING</td><td><span class="text-muted">403 (1.5/km)</span></td></tr>
-                                    <tr><td style="font-size:12px; font-family:sans-serif">HARSH ACCELERATION</td><td><span class="text-muted">495 (0.75/km)</span></td></tr>
-                                    <tr><td style="font-size:12px; font-family:sans-serif">OVER SPEEDING HOURS</td><td><span class="text-muted">100 (0.2/km)</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">HARSH BRAKING</td><td><span class="text-muted">{{vehAna.hard_brakes}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">HARSH ACCELERATION</td><td><span class="text-muted">{{vehAna.hard_accels}}</span></td></tr>
+                                    <tr><td style="font-size:12px; font-family:sans-serif">OVER SPEEDING HOURS</td><td><span class="text-muted">{{vehAna.overSpeed}}</span></td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -495,10 +496,7 @@
     <!-- MDB core JavaScript -->
     <!--<script src="js/mdb.min.js"></script>-->
 
+    <!--<div ng-view></div>-->
 </body>
-
-
-
-
 
 </html>

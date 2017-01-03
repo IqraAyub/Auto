@@ -5,8 +5,51 @@
 //        .when('/', {
 //            templateUrl: 'index.html',
 //            controller: 'myCtrl'
+//        })
+//        .otherwise({
+//            redirectTo: '/'
 //        });
-//});
+//    });
+
+//var myApp = angular.module('myApp', []);
+myApp.service('testService', function ($http) {
+
+    var service = {
+        getVehData: getVehData,
+        getTripData: getTripData
+    };
+
+    return service;
+
+    function getVehData() {
+        var defer = $.Deferred();
+        $http.get('/dependancy/vehicles.eea2fa51.json')
+             .success(function (response) {
+                 console.log(response);
+                 defer.resolve(response);
+
+             })
+             .error(function (error) {
+                 console.error("The async call has fail");
+             });
+        return defer.promise();
+    }
+
+    function getTripData() {
+        var defer = $.Deferred();
+        $http.get('/dependancy/trips.ea76ba5e.json')
+             .success(function (response) {
+                 console.log(response);
+                 defer.resolve(response);
+
+             })
+             .error(function (error) {
+                 console.error("The async call has fail");
+             });
+        return defer.promise();
+    }
+
+});
 
 
 //myApp.factory('datacontext', datacontext);
