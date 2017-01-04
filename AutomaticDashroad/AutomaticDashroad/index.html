@@ -13,7 +13,8 @@
     <!--<script src="Scripts/angular-route.min.js"></script>-->
     <script src="Scripts/angular-animate.min.js"></script>
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
+    
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.min.js"></script>-->
     <!--<link rel="stylesheet" href="/angular-chart.js/dist/angular-chart.css" />-->
 
@@ -118,7 +119,7 @@
                     <div class="card">
                         <div id="car-name-card" class="box box-block bg-white center-aligned " style="height: 197px;">
                             <div class="clearfix mb-1 first-sub-report-card-header">
-                                <h5 class="float-xs-left first-sub-report-card-header-text center-aligned font-italic"><!-- react-text: 29 -->{{veh.make}} {{veh.model}} {{veh.year}} <!-- /react-text --><br><!-- react-text: 31 --> <!-- /react-text --><br><!-- react-text: 33 --> 77,000KM<!-- /react-text --></h5>
+                                <h5 class="float-xs-left first-sub-report-card-header-text center-aligned font-italic"><!-- react-text: 29 -->{{veh.make}} {{veh.model}} {{veh.year}} <!-- /react-text --><br><!-- react-text: 31 --> <!-- /react-text --><br><!-- react-text: 33 --> {{veh.distanceKM}} KM<!-- /react-text --></h5>
                             </div>
                         </div>
                     </div>
@@ -178,9 +179,9 @@
                                     <tr><td style="font-size:12px; font-family:sans-serif">MAKE</td><td><span class="text-muted">{{veh.make}}</span></td></tr>
                                     <tr><td style="font-size:12px; font-family:sans-serif">MODEL</td><td><span class="text-muted">{{veh.model}}</span></td></tr>
                                     <tr><td style="font-size:12px; font-family:sans-serif">YEAR</td><td><span class="text-muted">{{veh.year}}</span></td></tr>
-                                    <tr><td style="font-size:12px; font-family:sans-serif">BODY TYPE</td><td><span class="text-muted">{{veh.bodyType}}</span></td></tr>
+                                    <!--<tr><td style="font-size:12px; font-family:sans-serif">BODY TYPE</td><td><span class="text-muted">{{veh.bodyType}}</span></td></tr>-->
                                     <tr><td style="font-size:12px; font-family:sans-serif">FUEL TYPE</td><td><span class="text-muted">{{veh.fuelType}}</span></td></tr>
-                                    <tr><td style="font-size:12px; font-family:sans-serif">POWERTRAIN</td><td><span class="text-muted">{{veh.powerTrain}}</span></td></tr>
+                                    <!--<tr><td style="font-size:12px; font-family:sans-serif">POWERTRAIN</td><td><span class="text-muted">{{veh.powerTrain}}</span></td></tr>-->
                                 </tbody>
                             </table>
                         </div>
@@ -232,7 +233,6 @@
                 <!--/.Third column-->
             </div>
             <!--/.Second row-->
-            <hr>
             <div class="col-md-12">
                 <nav class="navbar primary-color" style="color:white"> <h1 class="h1-responsive">Vehicle Analytics</h1></nav>
                 <!--<h1 class="h1-responsive">
@@ -301,8 +301,9 @@
                                     <canvas id="highwayVScity" height="150" width="300" style="display: block; width: 300px; height: 150px;"></canvas>
                                 </div>
                             </div>
+                            <div class="chart-explanation" style="font-size:12px; font-family:sans-serif">TODO: put in an explanation here</div>
                         </div>
-
+                        
                     </div>
                     <!--/.Card-->
                 </div>
@@ -358,7 +359,7 @@
                         <div id="fuel-economy-card" class="box box-block bg-white" style="height: 260px;">
                             <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px none; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
                             <h5 class="mb-2">FUEL ECONOMY</h5>
-                            <canvas height="161" width="322" style="display: block; width: 322px; height: 161px;"></canvas>
+                            <canvas id="lineChart" height="161" width="322" style="display: block; width: 322px; height: 161px;"></canvas>
                         </div>
 
                     </div>
@@ -446,7 +447,7 @@
                             <h5 class="mb-2">RPM RANGE</h5><div class="row">
                                 <div class="gauge-chart">
                                     <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-                                    <canvas height="175" width="351" style="display: block; width: 351px; height: 175px;"></canvas>
+                                    <canvas id="barChart" height="175" width="351" style="display: block; width: 351px; height: 175px;"></canvas>
                                 </div>
                             </div><div class="chart-explanation" style="font-size:12px; font-family:sans-serif">Engines have a range of ‘good’ RPM that is usually below 3500 RPMs. This car falls into a good range 93.6% of its life.</div>
                         </div>
@@ -465,7 +466,7 @@
         <!--/.Main layout-->
     </main>
 
-
+  
 
     <!--Footer-->
     <footer class="page-footer center-on-small-only primary-color">

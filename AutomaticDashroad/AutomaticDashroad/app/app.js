@@ -12,7 +12,7 @@
 //    });
 
 //var myApp = angular.module('myApp', []);
-myApp.service('testService', function ($http) {
+myApp.service('automaticService', function ($http) {
 
     var service = {
         getVehData: getVehData,
