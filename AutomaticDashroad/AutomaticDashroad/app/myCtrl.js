@@ -1,7 +1,7 @@
 ﻿myApp.controller('myCtrl', ['$scope', '$http', '$window', 'automaticService', function ($scope, $http, $window, automaticService) {
     //Global scope objects
     $scope.allItemsSelected = false;
-    $scope.veh = { make: 'Lexus', model: 'ES 350', year: '2016', bodyType: 'Sedan', fuelType: 'Gasoline', powerTrain: 'Front wheel drive', vinId: 'jtmzf33v895004330', prodNum: '004330', distanceKM: '' };
+    $scope.veh = { make: '', model: '', year: '', fuelType: '', vinId: '', prodNum: '', distanceKM: '' };
     $scope.vehAna = { hard_brakes: '', hard_accels: '', overSpeed: '' };
     $scope.trips = [];
     $scope.selectedItem = '';
@@ -21,16 +21,11 @@
     var mpgFuelEconomy = [];
     var distInMilesDataArray = [];
     var fuelInGallonArray = [];
+  //  var today, todayNumber, mondayNumber, sundayNumber, monday, sunday, month, year, lastDay, firstDay;
 
     getVehicle();
     getTrip();
     getMIL();
-
-    $scope.dropboxitemselected = function (selectedValue) {
-        $scope.selectedItem = selectedValue;
-        var val =  $scope.selectedItem;
-        getTrip(val);
-    }
 
     function getVehicle() {
         automaticService.getVehicle().then(function (result) {
@@ -49,7 +44,7 @@
         })
     }
 
-    function getTrip(val) {
+    function getTrip() {
         automaticService.getTrips().then(function (result) {
             var data = result.results;
             $scope.trips = result.results;
@@ -92,7 +87,7 @@
             //for driving style
             $scope.vehAna.hard_accels = harshAccel;
             $scope.vehAna.hard_brakes = harshBrake;
-            $scope.vehAna.overSpeed = OverSpeed;
+            $scope.vehAna.overSpeed = Math.ceil(OverSpeed * 0.00027778);
             //for driving style
 
             //  Calling graph functions
@@ -103,7 +98,6 @@
             trip(distInMilesDataArray, fuelInGallonArray);
             initHeatMap($scope.trips);
             // initMap(data);
-
             return cityFraction, highwayFraction, avgMPG, data, $scope.trip;
         })
     };
@@ -122,19 +116,19 @@
             type: 'doughnut',
             data: {
                 labels: [
-                    "Heavy Drive",
-                    "Normal Drive"
+                    "%Heavy Drive",
+                    "%Normal Drive"
                 ],
                 datasets: [
                     {
-                        data: [totalAvgDistance, 10],
+                        data: [totalAvgDistance/100, (100-totalAvgDistance)/100],
                         backgroundColor: [
-                            "#DC143C",
-                            "#90EE90"
+                            "#90EE90",
+                            "#FFFAF0"
                         ],
                         hoverBackgroundColor: [
-                            "#DC143C",
-                            "#90EE90"
+                            "#90EE90",
+                            "#FFFAF0"
                         ]
                     }]
             },
@@ -190,12 +184,11 @@
             type: 'doughnut',
             data: {
                 labels: [
-                    "Average MPG",
-                    "White"
+                    "Average MPG"
                 ],
                 datasets: [
                     {
-                        data: [avgMPG, 10],
+                        data: [avgMPG, (100-avgMPG)],
                         backgroundColor: [
                             "#90EE90",
                             "#FFFAF0"
@@ -266,17 +259,7 @@
 
     }
 
-    //Google Map
-    //$window.map = new google.maps.Map(document.getElementById('map'), {
-    //    center: new google.maps.LatLng(37.86974, -122.319345),
-    //    zoom: 11,
-    //    // styles: [{ "featureType": "administrative", "elementType": "all", "stylers": [{ "visibility": "on" }, { "lightness": 33 }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2e5d4" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#c5dac6" }] }, { "featureType": "poi.park", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": 20 }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "lightness": 20 }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#c5c6c6" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#e4d7c6" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#fbfaf7" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "visibility": "on" }, { "color": "#acbcc9" }] }]
-
-    //});
-
-    //$scope.getTrip = function (tripStart, tripEnd, isChecked) {
-        $scope.getTrip = function (tripStart, tripEnd) {
-      //  if (isChecked) {
+    $scope.getTripRoute = function (tripStart, tripEnd) {
             var directionsService = new google.maps.DirectionsService;
             var directionsDisplay = new google.maps.DirectionsRenderer;
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -296,39 +279,30 @@
                     window.alert('Directions request failed due to ' + status);
                 }
             });
-
-        //} else {
-        //    var map = new google.maps.Map(document.getElementById('map'), {
-        //        zoom: 11,
-        //        center: new google.maps.LatLng(37.86974, -122.31934)
-        //    });
-        //    directionsDisplay.setMap(map);
-        //}
     }
 
+    //$scope.selectEntity = function () {
+    //    // If any entity is not checked, then uncheck the "allItemsSelected" checkbox
+    //    for (var i = 0; i < $scope.trips.length; i++) {
+    //        if (!$scope.trips[i].isChecked) {
+    //            $scope.allItemsSelected = false;
+    //            return;
+    //        }
+    //    }
 
-    $scope.selectEntity = function () {
-        // If any entity is not checked, then uncheck the "allItemsSelected" checkbox
-        for (var i = 0; i < $scope.trips.length; i++) {
-            if (!$scope.trips[i].isChecked) {
-                $scope.allItemsSelected = false;
-                return;
-            }
-        }
+    //    // ... otherwise check the "allItemsSelected" checkbox
+    //    $scope.allItemsSelected = true;
+    //};
 
-        // ... otherwise check the "allItemsSelected" checkbox
-        $scope.allItemsSelected = true;
-    };
+    //// Fired when the checkbox in the table header is checked
+    //$scope.selectAll = function () {
+    //    // Loop through all the entities and set their isChecked property
+    //    for (var i = 0; i < $scope.trips.length; i++) {
+    //        $scope.trips[i].isChecked = $scope.allItemsSelected;
+    //    }
+    //};
 
-    // Fired when the checkbox in the table header is checked
-    $scope.selectAll = function () {
-        // Loop through all the entities and set their isChecked property
-        for (var i = 0; i < $scope.trips.length; i++) {
-            $scope.trips[i].isChecked = $scope.allItemsSelected;
-        }
-    };
-
-    console.log("Items" + $scope.allItemsSelected);
+    //console.log("Items" + $scope.allItemsSelected);
 
     //Heat Map
     $window.map = new google.maps.Map(document.getElementById('map'), {
@@ -336,19 +310,16 @@
             lat: 25.229087999999997,
             lng: 55.410776
         },
-        zoom: 11,
+        zoom: 9,
         styles: [{ "featureType": "administrative", "elementType": "all", "stylers": [{ "visibility": "on" }, { "lightness": 33 }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2e5d4" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#c5dac6" }] }, { "featureType": "poi.park", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": 20 }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "lightness": 20 }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#c5c6c6" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#e4d7c6" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#fbfaf7" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "visibility": "on" }, { "color": "#acbcc9" }] }]
 
     });
 
     function initHeatMap(points) {
-        debugger;
         var heatmap;
         var mapOptions = {
-            zoom: 11,
+            zoom: 9,
             center: new google.maps.LatLng(25.229087999999997, 55.410776),
-
-            // styles: [{ "featureType": "all", "elementType": "all", "stylers": [{ "visibility": "on" }] }, { "featureType": "all", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "all", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "all", "elementType": "labels.text", "stylers": [{ "visibility": "off" }, { "color": "#ff0000" }] }, { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{ "visibility": "off" }, { "color": "#ffffff" }, { "gamma": "0.62" }, { "lightness": "-73" }] }, { "featureType": "all", "elementType": "labels.text.stroke", "stylers": [{ "color": "#000000" }, { "lightness": 13 }, { "visibility": "off" }] }, { "featureType": "all", "elementType": "labels.icon", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }] }, { "featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{ "color": "#144b53" }, { "lightness": 14 }, { "weight": 1.4 }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#08304b" }] }, { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#0c4152" }, { "lightness": 5 }] }, { "featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }] }, { "featureType": "road.highway", "elementType": "geometry.stroke", "stylers": [{ "color": "#0b434f" }, { "lightness": 25 }, { "visibility": "on" }] }, { "featureType": "road.highway", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "labels.text.stroke", "stylers": [{ "lightness": "-8" }] }, { "featureType": "road.highway", "elementType": "labels.icon", "stylers": [{ "visibility": "simplified" }, { "gamma": "0.00" }, { "lightness": "-33" }, { "saturation": "-53" }, { "weight": "0.42" }] }, { "featureType": "road.arterial", "elementType": "geometry.fill", "stylers": [{ "color": "#000000" }] }, { "featureType": "road.arterial", "elementType": "geometry.stroke", "stylers": [{ "color": "#0b3d51" }, { "lightness": 16 }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#000000" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "color": "#146474" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#021019" }] }]
             styles: [{ "featureType": "administrative", "elementType": "all", "stylers": [{ "visibility": "on" }, { "lightness": 33 }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2e5d4" }] }, { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#c5dac6" }] }, { "featureType": "poi.park", "elementType": "labels", "stylers": [{ "visibility": "on" }, { "lightness": 20 }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "lightness": 20 }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#c5c6c6" }] }, { "featureType": "road.arterial", "elementType": "geometry", "stylers": [{ "color": "#e4d7c6" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#fbfaf7" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "visibility": "on" }, { "color": "#acbcc9" }] }]
         };
 
@@ -360,21 +331,17 @@
             var dataArr = [];
             var lat, lng;
             var pointsArr = [];
-
             for (var prop in data) {
                 dataArr.push(data[prop]);
             }
-
             for (var i = 0; i < dataArr.length; i++) {
                 lat = dataArr[i].start_location.lat;
                 lng = dataArr[i].start_location.lon;
 
                 pointsArr.push(new google.maps.LatLng(lat, lng));
-
             }
             return pointsArr;
         }
-
 
         heatmap = new google.maps.visualization.HeatmapLayer({
             data: getPoints(data),

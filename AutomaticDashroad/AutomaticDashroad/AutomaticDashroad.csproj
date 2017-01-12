@@ -66,6 +66,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\myCtrl.js" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="img\favicon.ico" />
     <Content Include="img\Logo.png" />
     <Content Include="img\Logo2.png" />
     <Content Include="Scripts\angular-animate.js" />
@@ -831,6 +832,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="dependancy\vehicle-mil.json" />
+    <Content Include="dependancy\main.e5cc9f96.css" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
