@@ -1,0 +1,21 @@
+﻿{
+  "_metadata": {
+    "count": 2,
+    "next": null,
+    "previous": null
+  },
+  "results": [
+    {
+      "code": "B0078",
+      "on": true,
+      "created_at": "2015-09-30T08:10:31Z",
+      "description": "Third Row Right Seatbelt Pretensioner Deployment Control"
+    },
+    {
+      "code": "B0079",
+      "on": false,
+      "created_at": "2015-08-30T08:06:43Z",
+      "description": "Driver Seatbelt Pretensioner \"B\" Deployment Control"
+    }
+  ]
+}

@@ -833,6 +833,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="dependancy\vehicle-mil.json" />
     <Content Include="dependancy\main.e5cc9f96.css" />
+    <None Include="Properties\PublishProfiles\dashroad.pubxml" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
