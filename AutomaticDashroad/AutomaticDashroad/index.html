@@ -15,6 +15,12 @@
             max-height: 440px;
             overflow: scroll;
         }
+        .canvasjs-chart-credit {
+            display:none;
+        }
+        .canvasjs-chart-canvas {
+/*display:;*/
+        }
         p {
             font-family: Lato;
             font-size: 14px;
@@ -33,6 +39,7 @@
     <script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.min.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-charts/0.2.7/angular-charts.min.js"></script>-->
+    <script src="js/canvasjs.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/myCtrl.js"></script>
 
@@ -121,7 +128,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div id="fuel-economy-card" class="box box-block bg-white" style="height: 292px;"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe><h5 class="mb-2">Trips Chart</h5><canvas id="tripBarChart" height="160" width="321" style="display: block; width: 321px; height: 160px;"></canvas></div>
+                                    <div id="fuel-economy-card" class="box box-block bg-white" style="height: 292px;">
+                                        <!--<iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>-->
+                                    <h5 class="mb-2">Trips Chart</h5>
+                                    <!--<canvas id="tripBarChart" height="160" width="321" style="display: block; width: 321px; height: 160px;"></canvas>-->
+                                        <div id="tripBarChart" style="display: block; width: 321px; height: 200px;"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

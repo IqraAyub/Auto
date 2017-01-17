@@ -74,8 +74,10 @@
                     fuelInGallonArray.push(Math.ceil(fuelInGallon));
                 //for trip graph
                 //for city vs highway
-                    cityFraction += $scope.trip.city_fraction;
-                    highwayFraction += $scope.trip.highway_fraction;
+                    cityFraction += $scope.trip.duration_over_70_s;
+                    highwayFraction += $scope.trip.duration_over_75_s + $scope.trip.duration_over_80_s;
+                    var city = (cityFraction / (cityFraction + highwayFraction)) * 0.00027778;
+                    var highway = (highwayFraction / (cityFraction + highwayFraction)) * 0.00027778;
                 //for city vs highway
                 }
 
@@ -89,16 +91,16 @@
             $scope.vehAna.hard_brakes = harshBrake;
             $scope.vehAna.overSpeed = Math.ceil(OverSpeed * 0.00027778);
             //for driving style
-
+         
             //  Calling graph functions
             heavyDerive(Math.ceil(totalAvgDistance));
             drawAvgFuelEconomy(Math.ceil(avgMPG));
-            drawhighwayCity(Math.ceil(cityFraction), Math.ceil(highwayFraction));
+            drawhighwayCity(Math.ceil(city), Math.ceil(highway));
             fuelEconomy(speedMPHDataArray, mpgFuelEconomy);
             trip(distInMilesDataArray, fuelInGallonArray);
             initHeatMap($scope.trips);
             // initMap(data);
-            return cityFraction, highwayFraction, avgMPG, data, $scope.trip;
+            return city, highway, avgMPG, data, $scope.trip;
         })
     };
 
@@ -151,8 +153,8 @@
             type: 'doughnut',
             data: {
                 labels: [
-                    "Highway",
-                    "City"
+                    "Highway " +highwayFraction+"%",
+                    "City "+cityFraction+"%"
                 ],
                 datasets: [
                     {
@@ -209,14 +211,14 @@
     }
     //Fuel Economy
     function fuelEconomy(speedMPHDataArray, mpgFuelEconomy) {
-        var ctx = document.getElementById("lineChart");
+        var ctx = document.getElementById("lineChart").getContext("2d");
         var myLineChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: speedMPHDataArray,
+                labels: [0,10,20,30,40,50,60,70,80,90,100],
                 datasets: [
                     {
-                        label: "SpeedMPH/FuelMPG",
+                        label: "MPG",
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: "rgba(75,192,192,0.4)",
@@ -232,29 +234,62 @@
                     }
                 ]
             }
+            
         });
+       
 
     }
     //Each trip chart
     function trip(distInMilesDataArray, fuelInGallonArray) {
-        var ctx = document.getElementById("tripBarChart");
-        var myBarChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: distInMilesDataArray, 
-                datasets: [
-                    {
-                        label: "Distance(miles)/Fuel(gallons)",
-                        backgroundColor: 
-                            'rgba(255, 99, 132, 0.2)',
-                        borderColor: 
-                            'rgba(255,99,132,1)',                       
-                        borderWidth: 1,
-                        data: fuelInGallonArray,
-                    }
-                ]
-            }
+        var a = distInMilesDataArray;
+        var b = fuelInGallonArray;
+        var asJSON = [];
+        for (i = 0; i < a.length; i++) {
+            var obj = {};
+                obj['x'] = a[i];
+                obj['y'] = b[i];
+                asJSON.push(obj);
+        }
+        var chart = new CanvasJS.Chart("tripBarChart", {
+            axisX: {						
+                title: "Distance(ML)",
+                titleFontWeight: "bold",
+                titleFontSize: 14,
+                titleFontFamily: "open serif, sans-serif",
+            },
+            axisY: {						
+                title: "Fuel(G)",
+                titleFontWeight: "bold",
+                titleFontSize: 14,
+                titleFontFamily: "open serif, sans-serif",
+            },
+            data: [{
+                type: "column",
+                dataPoints: asJSON
+            }]
         });
+
+        chart.render();
+
+        //var ctx = document.getElementById("tripBarChart");
+        //var myBarChart = new Chart(ctx, {
+        //    type: 'line',
+        //    data: {
+        //       // labels: distInMilesDataArray, 
+        //     //   labels:[10,20,30,40,50],
+        //        datasets: [
+        //            {
+        //                label: "Distance(miles)/Fuel(gallons)",
+        //                backgroundColor: 
+        //                    'rgba(255, 99, 132, 0.2)',
+        //                borderColor: 
+        //                    'rgba(255,99,132,1)',                       
+        //                borderWidth: 1,
+        //                data: asJSON,
+        //            }
+        //        ]
+        //    }
+        //});
 
     }
 
@@ -279,30 +314,6 @@
                 }
             });
     }
-    
-        //$scope.selectEntity = function () {
-        //    // If any entity is not checked, then uncheck the "allItemsSelected" checkbox
-        //    for (var i = 0; i < $scope.trips.length; i++) {
-        //        if (!$scope.trips[i].isChecked) {
-        //            $scope.allItemsSelected = false;
-        //            return;
-        //        }
-        //    }
-
-        //    // ... otherwise check the "allItemsSelected" checkbox
-        //    $scope.allItemsSelected = true;
-        //};
-
-        //// Fired when the checkbox in the table header is checked
-        //$scope.selectAll = function () {
-        //    // Loop through all the entities and set their isChecked property
-        //    for (var i = 0; i < $scope.trips.length; i++) {
-        //        $scope.trips[i].isChecked = $scope.allItemsSelected;
-        //    }
-        //};
-
-        //console.log("Items" + $scope.allItemsSelected);
-    
     //Heat Map
     $window.map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -343,6 +354,8 @@
         }
 
         heatmap = new google.maps.visualization.HeatmapLayer({
+            dissipating: false,
+            radius: 5,
             data: getPoints(data),
             map: map
         });
